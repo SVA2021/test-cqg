@@ -1,0 +1,18 @@
+<h4
+  class="card-title"
+  [class.filtered]="isFiltered"
+  [class.highlighted]="isHighlighted"
+>
+  <ng-container *ngIf="isSimple; else complex">
+    {{title}}
+  </ng-container>
+
+  <ng-template #complex>
+      <span class="title-main">
+        {{titleMain}}
+      </span>
+    <span class="title-other">
+        {{titleOther}}
+      </span>
+  </ng-template>
+</h4>
