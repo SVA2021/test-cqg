@@ -7,7 +7,7 @@ import {CardT, mockData} from "../models/models";
   providedIn: 'root'
 })
 export class ApiCallService {
-  private readonly http = inject(HttpClient);
+  // private readonly http = inject(HttpClient);
 
   getCards(): Observable<CardT[]> {
     return of(mockData);

@@ -1,1 +1,37 @@
-<p>main works!</p>
+<section class="main">
+  <div class="header">
+    <div class="search">
+      <tui-input
+        [tuiTextfieldSize]="'s'"
+        [tuiTextfieldCleaner]="true"
+        [formControl]="searchString"
+      >
+        Search
+        <input
+          tuiTextfield
+          type="email"
+        />
+      </tui-input>
+    </div>
+    <button
+      appearance="primary"
+      tuiIconButton
+      type="button"
+      size="s"
+      [icon]="'tuiIconRefreshCw'"
+    >
+      primary
+    </button>
+  </div>
+  <tui-scrollbar class="scrollbar">
+  <div class="content">
+      <app-card
+        *ngFor="let card of cards$ | async"
+        [card]="card"
+        [isHovered]="isCardHovered(card)"
+        [isDepsOfActive]="isCardDepsOfActive(card)"
+        (tuiHoveredChange)="onSetActiveCard($event, card)"
+      ></app-card>
+  </div>
+  </tui-scrollbar>
+</section>

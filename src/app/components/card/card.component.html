@@ -1,1 +1,22 @@
-<p>card works!</p>
+<div
+  class="card"
+  *ngIf="card"
+>
+  <app-card-title
+    [title]="card.id"
+    [isHighlighted]="isHovered"
+    [isFiltered]="isDepsOfActive"
+  ></app-card-title>
+  <p class="card-text">
+    <b>
+      {{ getDownloads() }}
+    </b>
+    <tui-svg
+      [tuiTextfieldSize]="'s'"
+      [src]="'tuiIconDownload'"
+    ></tui-svg>
+  </p>
+  <p class="card-text">
+    {{ getDependencies() }}
+  </p>
+</div>
